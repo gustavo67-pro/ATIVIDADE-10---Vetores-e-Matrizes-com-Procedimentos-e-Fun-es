@@ -1,0 +1,33 @@
+programa {
+  funcao inicio() {
+    inteiro num[10][10], valor, l, c, cont[2], final
+    escreva("quantas linhas deseja inserir (max: 10): ")
+    leia(cont[0])
+    escreva("quantas colunas deseja inserir (max: 10): ")
+    leia(cont[1])
+    para(l=0;l<cont[0];l++){
+      para(c=0;c<cont[1];c++){
+        escreva("insira o valor de [", l, "] [", c, "]: ")
+        leia(num[l][c])
+      }
+    }
+    escreva("insira um numero para verificaçao: ")
+    leia(valor)
+
+     final = verificar(num, cont, l, c, valor)
+     escreva("esse numero se repetiu: ", final)
+  }
+  funcao inteiro verificar(inteiro num[][],inteiro cont[], inteiro l, inteiro c, inteiro valor){
+    inteiro final = 0
+    para(l=0;l<cont[0];l++){
+      para(c=0;c<cont[1];c++){
+       se(valor == num[l][c] )
+       final = final + 1
+     
+      }
+    }
+          retorne final
+         
+  }
+}
+
