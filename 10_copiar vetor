@@ -1,0 +1,40 @@
+programa {
+  funcao inicio() {
+    inteiro num1[10], num2[10], i, contador1, contador2
+    escreva("quantos vetores voce deseja em A (max: 10): ")
+    leia(contador1)
+    para(i=0; i<contador1; i++){
+      escreva("insira o valor para A[", i, "]: ")
+      leia(num1[i])
+    }
+    escreva("agora quantos vetroes para B (max: 10): ")
+    leia(contador2)
+    para(i=0; i<contador2; i++){
+      escreva("insira o valor para B[", i, "]: ")
+      leia(num2[i])
+    }    
+         
+      copia(num1, num2, contador1, contador2)
+
+  }
+   
+   funcao copia (inteiro num1[],inteiro num2[],inteiro contador1,inteiro contador2){
+     inteiro i
+     
+     para(i=0;i<contador1;i++){
+      escreva("\nvetor [", i, "]A: ", num1[i])
+     }
+     escreva("\n------------------------")
+      
+      para(i=0; i<contador2; i++){
+        escreva("\nvetor [", i, "]B: ", num2[i])
+
+
+
+
+      }
+
+   }
+}
+
+
