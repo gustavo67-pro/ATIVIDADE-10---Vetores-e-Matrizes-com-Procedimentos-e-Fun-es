@@ -1,0 +1,42 @@
+programa {
+  funcao inicio() {
+    inteiro num[10][10], linhas, contador1, contador2, colunas
+    escreva("quantas linhas deseja colocar em sua matriz (max: 10): ")
+    leia(contador1)
+    escreva("quantas colunas deseja em sua matriz (max: 10): ")
+    leia(contador2)
+    para(linhas=0; linhas<contador1; linhas++){
+      para(colunas=0; colunas<contador2; colunas++){
+        escreva("insira o valor de: [", linhas, "] [", colunas, "]: ")
+        leia(num[linhas][colunas])
+
+      }
+
+    }
+     escrita(num, linhas, colunas, contador1, contador2)
+
+
+
+  }
+    funcao escrita(inteiro num[][], inteiro linhas, inteiro colunas, inteiro contador1, inteiro contador2){
+      inteiro i
+      escreva("\n=======================================\n")
+      para(linhas=0;linhas<contador1;linhas++){
+        para(colunas=0;colunas<contador2;colunas++){
+          escreva(num[linhas][colunas], "\t")
+          
+ 
+        }
+        escreva("\n=======================================\n")
+      }
+
+   }
+
+
+
+
+
+
+
+
+}
