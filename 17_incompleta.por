@@ -13,7 +13,7 @@ programa {
       para(c=0; c<3; c++){
         escreva("Digite o valor da matriz ",l,",",c,"\n")
         leia(matriz[l][c])
-        se ((l==0) e (c==2) ou (l==1) e (c==1) ou (l==2) e (c==0)){
+        se (((l==0) e (c==2)) ou ((l==1) e (c==1)) ou ((l==2) e (c==0))){
           soma = matriz[l][c]+soma
         }
       }
