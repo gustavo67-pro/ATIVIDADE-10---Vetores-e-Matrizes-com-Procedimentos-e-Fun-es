@@ -1,0 +1,38 @@
+programa {
+  funcao inicio() {
+    inteiro num[10], i, valor, contador
+    logico resultado
+    escreva("quantos vetores deseja acrecentar (max:10): ")
+    leia(contador)
+    para(i=0 ; i < contador ; i++){
+    escreva("insira o valor de [", i ,"]: ")
+    leia(num[i])
+
+    }
+    escreva("insira o valor que deseja procurar: ")
+    leia(valor)
+
+    resultado = verificar(num,valor,contador)
+    escreva("o numero foi encontrado?: ", resultado)
+    
+
+
+
+  }
+  funcao logico verificar(inteiro num[], inteiro valor, inteiro contador){
+    inteiro i
+    logico resultado
+    para(i=0;i<contador;i++){
+     se(valor == num[i])
+     retorne verdadeiro
+     
+    }
+    
+    retorne falso
+    
+
+
+    
+  }
+  
+}
