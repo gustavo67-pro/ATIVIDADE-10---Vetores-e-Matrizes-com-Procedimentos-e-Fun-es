@@ -1,0 +1,48 @@
+programa {
+  funcao inicio() {
+    inteiro num[10][10], linhas,colunas, contador[2], valor, maior
+    escreva("insira a quantida de de linhas desejadas (max: 10): ")
+    leia(contador[0])
+    escreva("insira a quantidade de colunas desejadas (max: 10): ")
+    leia(contador[1])
+    para(linhas=0 ; linhas<contador[0]; linhas++){
+      para(colunas=0; colunas<contador[1]; colunas++){
+        escreva("insira o valor de [", linhas, "] [", colunas, "]: ")
+        leia(num[linhas][colunas])
+      }
+
+    }
+    maior = encontrar_maior(num,linhas,colunas,contador)
+    escreva("seu maior numero é: ", maior)
+   
+
+    
+  }
+   funcao inteiro encontrar_maior(inteiro num[][], inteiro linhas, inteiro colunas, inteiro contador[]){
+    inteiro maior = num[0][0]
+    para(linhas=0 ; linhas<contador[0]; linhas++){
+      para(colunas=0; colunas<contador[1]; colunas++){
+       se(maior < num[linhas][colunas]){
+        maior = num[linhas][colunas]
+    
+       }
+      }
+
+    }
+       retorne maior
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+   
+   
+     }
+   }
