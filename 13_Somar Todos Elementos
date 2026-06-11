@@ -1,0 +1,34 @@
+programa {
+  funcao inicio() {
+    inteiro num[10][10], linhas, colunas, contador1, contador2, resultado
+    escreva("quantas linhas serao utilizadas na soma (max: 10): ")
+    leia(contador1)
+    escreva("quantas colunas cada linha tera na soma (max: 10): ")
+    leia(contador2)
+    para(linhas=0; linhas<contador1; linhas++){
+      para(colunas=0; colunas<contador2; colunas++){
+        escreva("insira o valor de [", linhas, "] [", colunas, "]: ")
+        leia(num[linhas][colunas])
+
+      }
+
+    }
+       resultado = soma_matriz(num,contador1, contador2, linhas, colunas)
+       escreva("soma total: ", resultado)
+  
+   }
+   funcao  inteiro soma_matriz(inteiro num[][], inteiro contador1, inteiro contador2, inteiro linhas,inteiro colunas){
+    inteiro resultado
+    resultado = 0
+    para(linhas=0;linhas<contador1;linhas++){
+      para(colunas=0; colunas<contador2; colunas++){
+        resultado = resultado + num[linhas][colunas]
+
+      }
+     
+    }
+       retorne resultado
+
+   }
+
+}
