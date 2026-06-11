@@ -23,7 +23,8 @@ programa {
 
 }
 
-
+//o problema está em  "se (((l==0) e (c==2)) ou ((l==1) e (c==1)) ou ((l==2) e (c==0))){
+//         soma = matriz[l][c]+soma" depois de receber o segundo valor
 
 //17. Soma da Diagonal Secundária: Crie uma funcao que receba uma matriz
 //quadrada 3x3 e retorne a soma dos elementos [0][2], [1][1] e [2][0].
