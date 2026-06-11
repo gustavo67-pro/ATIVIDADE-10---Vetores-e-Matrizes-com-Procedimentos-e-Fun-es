@@ -1,0 +1,30 @@
+programa {
+  funcao inicio() {
+    inteiro num[10], i, numero, menor
+    escreva("quantos vetores deseja verificar (maX:10): ")
+    leia(numero)
+    para(i=0 ; i <numero ; i++){
+     escreva("insira o num de numero [", i, "]: ")
+     leia(num[i])
+    }
+        menor = encontrarMenor(num, numero)
+       escreva("o menor valor entre eles é: ", menor)
+  }
+
+    funcao inteiro encontrarMenor(inteiro num[], inteiro numero)
+{	
+	inteiro menor = num[0] 
+
+	para (inteiro i = 1; i < numero; i++)
+	{
+		se (num[i] < menor)
+		{
+			menor = num[i]
+		}
+	}
+
+	retorne menor
+}
+
+ 
+  }
