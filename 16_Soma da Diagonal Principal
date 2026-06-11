@@ -1,0 +1,39 @@
+programa {
+  funcao inicio() {
+    inteiro num[10][10], l, c, resultado, cont
+    
+    escreva("insira o tamanho do quadrado desejado (LINHAxCOLUNA): ")
+    leia(cont)
+    
+    para(l=0; l<cont; l++){
+      para(c=0; c<cont; c++){
+        escreva("insira o valor de [", l, "] [", c, "]: ")
+        leia(num[l][c])
+      }
+    }
+    
+
+    resultado = soma(num, cont)
+    
+    escreva("\nA soma dos elementos da diagonal principal é: ", resultado)
+  }
+
+  funcao inteiro soma(inteiro num[][], inteiro cont){
+  
+    inteiro l, c, resultado = 0
+    
+    para(l=0; l<cont; l++){
+      para(c=0; c<cont; c++){
+        
+
+        se (l == c) {
+          resultado = resultado + num[l][c]
+        }
+        
+      }
+    }
+    
+    
+    retorne resultado
+  }
+}
