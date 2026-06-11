@@ -1,0 +1,23 @@
+programa {
+  funcao inteiro maior_valor(inteiro vetor[],inteiro contador){
+    inteiro maior, i
+    maior=0
+     para (i=0; i<contador; i++){
+      escreva("Digite o valor do vetor para saber qual foi o maior valor digitado:\n")
+      leia(vetor[i])
+      se (vetor[i]>maior)
+      maior = vetor[i] 
+    }
+      
+    retorne maior
+  }
+  funcao inicio() {
+    inteiro i, max
+    escreva("Digite a quantidade de números: ")
+    leia(i)
+    inteiro vetor[i]
+    max = maior_valor(vetor,i)
+    escreva("O maior valor digitdo foi: ", max)
+   
+  } 
+}
