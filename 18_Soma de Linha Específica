@@ -1,0 +1,38 @@
+rograma {
+  funcao inicio() {
+    inteiro num[10][10], cont[2], linha, resultado
+    escreva("insira a quantidade de linhas (max: 10): ")
+    leia(cont[0])
+    escreva("insira a quantidade de colunas (max: 10): ")
+    leia(cont[1])
+  
+
+    soma_linhas(num,cont,linha)
+
+
+  }
+   funcao soma_linhas(inteiro num[][], inteiro cont[], inteiro linha){
+    inteiro l, c
+    inteiro resultado = 0
+     
+      escreva("qual linha deseja somar: ")
+    leia(linha)
+
+     para(l=0;l<cont[0];l++){
+      para(c=0;c<cont[1];c++){
+        escreva("insira o valor de [", l,"] [", c,"]: ")
+        leia(num[l][c])
+        
+        se(l == linha){
+          resultado = resultado + num[l][c]
+
+        }
+        
+       
+      }
+     }
+     escreva("seu resultado é: ", resultado)
+  
+   }
+
+}
