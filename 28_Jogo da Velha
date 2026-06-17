@@ -1,0 +1,117 @@
+programa
+{
+	procedimento exibirTabuleiro(cadeia tabuleiro[][])
+	{
+		para (inteiro l = 0; l < 3; l++)
+		{
+			para (inteiro c = 0; c < 3; c++)
+			{
+				escreva(" ", tabuleiro[l][c], " ")
+				se (c < 2) 
+				{
+					escreva("|")
+				}
+			}
+			escreva("\n")
+			se (l < 2) 
+			{
+				escreva("-----------\n")
+			}
+		}
+	}
+
+	procedimento fazerJogada(cadeia tabuleiro[][], cadeia jogador)
+	{
+		inteiro linha, coluna
+		logico jogada_valida = falso
+
+		enquanto (nao jogada_valida)
+		{
+			escreva("Jogador ", jogador, ", escolha a linha (0-2) e coluna (0-2): ")
+			leia(linha)
+			leia(coluna)
+
+			se (linha >= 0 e linha <= 2 e coluna >= 0 e coluna <= 2)
+			{
+				se (tabuleiro[linha][coluna] != "X" e tabuleiro[linha][coluna] != "O")
+				{
+					tabuleiro[linha][coluna] = jogador
+					jogada_valida = verdadeiro
+				}
+				senao
+				{
+					escreva("Posição já ocupada! Tente novamente.\n")
+				}
+			}
+			senao
+			{
+				escreva("Posição inválida! Tente novamente.\n")
+			}
+		}
+	}
+
+	funcao logico checarVitoria(cadeia tabuleiro[][])
+	{
+		para (inteiro i = 0; i < 3; i++)
+		{
+			se (tabuleiro[i][0] == tabuleiro[i][1] e tabuleiro[i][1] == tabuleiro[i][2] e tabuleiro[i][0] != " ")
+			{
+				retorne verdadeiro
+			}
+			se (tabuleiro[0][i] == tabuleiro[1][i] e tabuleiro[1][i] == tabuleiro[2][i] e tabuleiro[0][i] != " ")
+			{
+				retorne verdadeiro
+			}
+		}
+
+		se (tabuleiro[0][0] == tabuleiro[1][1] e tabuleiro[1][1] == tabuleiro[2][2] e tabuleiro[0][0] != " ")
+		{
+			retorne verdadeiro
+		}
+		se (tabuleiro[0][2] == tabuleiro[1][1] e tabuleiro[1][1] == tabuleiro[2][0] e tabuleiro[0][2] != " ")
+		{
+			retorne verdadeiro
+		}
+
+		retorne falso
+	}
+
+	funcao inicio()
+	{
+		cadeia tabuleiro[3][3] = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}}
+		cadeia jogador_atual = "X"
+		inteiro jogadas = 0
+		logico ganhou = falso
+
+		enquanto (jogadas < 9 e nao ganhou)
+		{
+			exibirTabuleiro(tabuleiro)
+			fazerJogada(tabuleiro, jogador_atual)
+			ganhou = checarVitoria(tabuleiro)
+			
+			se (ganhou)
+			{
+				exibirTabuleiro(tabuleiro)
+				escreva("Jogador ", jogador_atual, " venceu!\n")
+			}
+			senao
+			{
+				jogadas = jogadas + 1
+				se (jogador_atual == "X")
+				{
+					jogador_atual = "O"
+				}
+				senao
+				{
+					jogador_atual = "X"
+				}
+			}
+		}
+
+		se (nao ganhou)
+		{
+			exibirTabuleiro(tabuleiro)
+			escreva("O jogo terminou em empate!\n")
+		}
+	}
+}
